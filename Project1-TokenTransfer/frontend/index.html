@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Transfer DApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Token Transfer DApp</h1>
+        <div class="form-group">
+            <label for="toAddress">Recipient Address:</label>
+            <input type="text" id="toAddress" placeholder="0xRecipientAddress" required>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount to Transfer:</label>
+            <input type="number" id="amount" placeholder="Amount in Tokens" required>
+        </div>
+        <button onclick="transferTokens()">Transfer Tokens</button>
+
+        <h2>Transaction History</h2>
+        <ul id="transactionList"></ul>
+    </div>
+</body>
+</html>
