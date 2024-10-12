@@ -7,8 +7,10 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 8545,
-      network_id: "*", // Match any network id
+      // port: 8545, // for ganache cli
+      port: 7545, // for ganache desktop app
+      // network_id: "*", // Match any network id
+      network_id: "5777", // Match ganache network id
     },
     rinkeby: {
       provider: () => new HDWalletProvider(MNEMONIC, `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`),

@@ -26,7 +26,9 @@ module.exports = {
       provider: () => new HDWalletProvider(MNEMONIC, `https://sepolia.infura.io/v3/${INFURA_API_KEY}`),
       network_id: 11155111, // Sepolia's network id
       gas: 4500000,        // Gas limit
-      gasPrice: 10000000000, // 10 Gwei
+      gasPrice: null, // You can leave gasPrice as null for EIP-1559 transactions
+      maxFeePerGas: 20000000000, // 20 Gwei (set higher than the current base fee)
+      maxPriorityFeePerGas: 2000000000, // 2 Gwei (tip for the miner)
       networkCheckTimeout: 1000000 // Increase the timeout to a higher value (1,000,000 ms)
     }    
   },

@@ -5,28 +5,11 @@ const { MNEMONIC, INFURA_API_KEY } = process.env;
 
 module.exports = {
   networks: {
-    development: {
-      host: "127.0.0.1",
-      port: 8545,
-      network_id: "*", // Match any network id
-    },
-    rinkeby: {
-      provider: () => new HDWalletProvider(MNEMONIC, `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`),
-      network_id: 4,
-      gas: 4500000,
-      gasPrice: 10000000000
-    },
-    goerli: {
-      provider: () => new HDWalletProvider(MNEMONIC, `https://goerli.infura.io/v3/${INFURA_API_KEY}`),
-      network_id: 5,
-      gas: 4500000,
-      gasPrice: 10000000000
-    },
     sepolia: {
       provider: () => new HDWalletProvider(MNEMONIC, `https://sepolia.infura.io/v3/${INFURA_API_KEY}`),
       network_id: 11155111, // Sepolia's network id
-      gas: 4500000,        // Gas limit
-      gasPrice: 10000000000, // 10 Gwei
+      gas: 1000000,         // Lower gas limit to reduce deployment cost
+      gasPrice: 500000000, // 5 Gwei, lower than before
       networkCheckTimeout: 1000000 // Increase the timeout to a higher value (1,000,000 ms)
     }    
   },
